@@ -1,5 +1,6 @@
-(function(global) {
+(function() {
     var configuration = {};
+/*
     var hash = window.location.hash;
     hash = hash.substr(1, hash.length);
 
@@ -10,7 +11,7 @@
             console.error('Failed to load configuration', err);
         }
     }
-
+*/
     var fields = document.getElementsByTagName('input');
     var length = fields.length;
     while (length--) {
@@ -18,18 +19,13 @@
         setValue.call(field);
         field.addEventListener('change', setValue, false);
     }
+    function setValue() {
+        configuration[this.getAttribute('data-target')] = this.value;
+    }
 
     document.getElementById('save').onclick = function() {
+        console.log(JSON.stringify(configuration));
         window.location = 'pebblejs://close#' + encodeURIComponent(JSON.stringify(configuration));
     };
 
-    function setValue() {
-        var value = this.value;
-        if (this.getAttribute('type') == 'checkbox') {
-            value = this.checked;
-        }
-        configuration[this.getAttribute('data-target')] = value;
-    }
-
-    global.configuration = configuration; // for debugging
 })(this);
