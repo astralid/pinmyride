@@ -11,6 +11,8 @@
             console.error('Failed to load configuration', err);
         }
     }
+    var nfo = document.getElementById('nfo');
+    nfo.innerHTML = JSON.stringify(configuration);
 
     var fields = document.getElementsByTagName('input');
     var length = fields.length;
