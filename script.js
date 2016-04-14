@@ -1,6 +1,6 @@
 (function() {
     var configuration = {};
-/*
+
     var hash = window.location.hash;
     hash = hash.substr(1, hash.length);
 
@@ -11,7 +11,7 @@
             console.error('Failed to load configuration', err);
         }
     }
-*/
+
     var fields = document.getElementsByTagName('input');
     var length = fields.length;
     while (length--) {
