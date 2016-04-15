@@ -16,6 +16,7 @@
     var stopsElem = document.getElementById('stops');
     var def_input = stopsElem.getElementsByTagName('input')[0];
     
+    if (!configuration.stops) configuration.stops = [];
     var i, l = configuration.stops.length;
     for (i = 0; i < l; ++i) {
         var inp = def_input.cloneNode();
