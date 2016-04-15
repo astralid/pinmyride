@@ -27,6 +27,7 @@
     }
     def_input.ind = l;
     def_input.addEventListener('change', setValue, false);
+    configuration={};
     
     function setValue() {
         configuration.stops[this.ind] = this.value;//this.getAttribute('ind') == '' ? null : this.value;
