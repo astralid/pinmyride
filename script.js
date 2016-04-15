@@ -27,11 +27,11 @@
     }
     def_input.ind = l;
     def_input.addEventListener('change', setValue, false);
-    configuration={stopcode:null, stops:[]};
+    configuration={stops:[]};
     
     function setValue() {
         configuration.stops[this.ind] = this.value;//this.getAttribute('ind') == '' ? null : this.value;
-        nfo.innerHTML = JSON.stringify(configuration)+'***';
+        nfo.innerHTML = JSON.stringify(configuration);
     }
 
     document.getElementById('save').onclick = function() {
