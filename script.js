@@ -30,6 +30,7 @@
     
     function setValue() {
         configuration.stops[this.getAttribute('ind')] = this.value;// == '' ? null : this.value;
+        nfo.innerHTML = JSON.stringify(configuration);
     }
 
     document.getElementById('save').onclick = function() {
