@@ -16,7 +16,8 @@
     var stopsElem = document.getElementById('stops');
     var def_input = stopsElem.getElementsByTagName('input')[0];
     
-    if (!configuration.stops) configuration.stops = [];
+//    if (!configuration.stops) configuration.stops = [];
+    configuration = {stops: configuration.stops || []};
     var i, l = configuration.stops.length;
     for (i = 0; i < l; ++i) {
         var inp = def_input.cloneNode();
@@ -27,7 +28,6 @@
     }
     def_input.ind = l;
     def_input.addEventListener('change', setValue, false);
-    //configuration={stops:[]};
     
     function setValue() {
         configuration.stops[this.ind] = this.value;//this.getAttribute('ind') == '' ? null : this.value;
